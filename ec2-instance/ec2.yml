@@ -13,19 +13,22 @@ Resources:
       KeyName: yogendra-ec2-master
       ImageId: ami-013fffc873b1eaa1c
       InstanceType: t2.micro
+      SecurityGroupIds:
+        - !Ref MySecurityGroup
       Tags:
         - Key: Name
           Value: MyEC2
 
   MySecurityGroup:
     Type: AWS::EC2::SecurityGroup
-    GroupDescription: Allows SSH
-    SecurityGroupIngress:
-      - IpProtocol: ssh
-        FromPort: 22
-        ToPort: 22
-        CidrIp: 0.0.0.0/22
-    Tags:
-      - Key: Name
-        Value: "SSH Only"
+    Properties:
+      GroupDescription: Allows SSH
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 0.0.0.0/22
+      Tags:
+        - Key: Name
+          Value: "SSH Only"
   
