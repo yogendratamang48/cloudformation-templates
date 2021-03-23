@@ -10,32 +10,32 @@ Parameters:
     Default: 10.100.0.0/16
   
   PublicSubnetACIDR:
-    Description: Public Subnet 1
+    Description: Public Subnet A
     Type: String
     Default: 10.100.1.0/24
 
   PublicSubnetBCIDR:
-    Description: Public Subnet 2
+    Description: Public Subnet B
     Type: String
     Default: 10.100.3.0/24
   
   PublicSubnetCCIDR:
-    Description: Public Subnet 3
+    Description: Public Subnet C
     Type: String
     Default: 10.100.5.0/24
   
   PrivateSubnetACIDR:
-    Description: Private Subnet 1
+    Description: Private Subnet A
     Type: String
     Default: 10.100.2.0/24
   
   PrivateSubnetBCIDR:
-    Description: Private Subnet 2
+    Description: Private Subnet B
     Type: String
     Default: 10.100.4.0/24
 
   PrivateSubnetCCIDR:
-    Description: Private Subnet 3
+    Description: Private Subnet C
     Type: String
     Default: 10.100.6.0/24
 
@@ -75,7 +75,7 @@ Resources:
       AvailabilityZone: !Select [ 0, !GetAZs '']
       Tags:
         - Key: Name
-          Value: !Sub ${EnvironmentName} Public Subnet AZ2
+          Value: !Sub ${EnvironmentName} Public Subnet A
   
   PublicSubnetB:
     Type: AWS::EC2::Subnet
@@ -86,7 +86,7 @@ Resources:
       MapPublicIpOnLaunch: true
       Tags:
         - Key: Name
-          Value: !Sub ${EnvironmentName} Public Subnet AZ2
+          Value: !Sub ${EnvironmentName} Public Subnet B
   
 
   PublicSubnetC:
@@ -98,7 +98,7 @@ Resources:
       MapPublicIpOnLaunch: true
       Tags:
         - Key: Name
-          Value: !Sub ${EnvironmentName} Public Subnet AZ3
+          Value: !Sub ${EnvironmentName} Public Subnet C
   
   PrivateSubnetA:
     Type: AWS::EC2::Subnet
@@ -108,7 +108,7 @@ Resources:
       AvailabilityZone: !Select [ 0, !GetAZs '']
       Tags:
         - Key: Name
-          Value: !Sub ${EnvironmentName} Private Subnet AZ1
+          Value: !Sub ${EnvironmentName} Private Subnet A
   
   PrivateSubnetB:
     Type: AWS::EC2::Subnet
@@ -118,7 +118,7 @@ Resources:
       AvailabilityZone: !Select [ 1, !GetAZs '']
       Tags:
         - Key: Name
-          Value: !Sub ${EnvironmentName} Private Subnet AZ2
+          Value: !Sub ${EnvironmentName} Private Subnet B
     
 
   PrivateSubnetC:
@@ -129,7 +129,7 @@ Resources:
       AvailabilityZone: !Select [ 2, !GetAZs '']
       Tags:
         - Key: Name
-          Value: !Sub ${EnvironmentName} Private Subnet AZ3
+          Value: !Sub ${EnvironmentName} Private Subnet C
 
   # Creating Public Route Table and associating it with subnets
   PublicRouteTable:
