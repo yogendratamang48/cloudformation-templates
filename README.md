@@ -37,3 +37,7 @@ Version:
 Descriptions:
 Parameters:
 ```
+### Learning AWS with Infastructure as Code
+### AWS with cloudformation
+- Creating VPC (Subnets, RouteTable, IGW, VPCEndpoint, CIDR Block)
+- Subnets

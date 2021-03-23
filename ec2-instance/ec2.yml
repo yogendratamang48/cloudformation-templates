@@ -4,12 +4,6 @@ Resources:
   MyEC2:
     Type: AWS::EC2::Instance
     Properties:
-      UserData:
-        Fn::Base64: |
-          #! /bin/bash
-          cat >~ /file <<EOF
-          Hi, This is yogendra
-          EOF 
       KeyName: yogendra-ec2-master
       ImageId: ami-013fffc873b1eaa1c
       InstanceType: t2.micro
