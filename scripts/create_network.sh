@@ -2,5 +2,5 @@
 # Creating VPC
 aws cloudformation create-stack \
 --stack-name myvpc \
---template-body file://vpc.yml \
+--template-body file://network/vpc.yml \
 --parameters ParameterKey=EnvironmentName,ParameterValue=ytamang.com
